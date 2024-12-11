@@ -17,3 +17,4 @@ file_path = r"C:\Users\kimse\Downloads\air_pollution_data.xlsx"
 df = load_excel_data(file_path)
 
 print(df.tail())
+print(df.info())
