@@ -19,3 +19,4 @@ df = load_excel_data(file_path)
 print(df.tail())
 print(df.info())
 # 어떻게 데이터 전처리를 할까요
+print(df.describe()) 
