@@ -20,3 +20,11 @@ print(df.tail())
 print(df.info())
 # 어떻게 데이터 전처리를 할까요
 print(df.describe()) 
+
+# 사용 예시
+if __name__ == "__main__":
+    file_path = "C:/pgm2/air_pollution_data.xlsx"  # 엑셀 파일 경로를 입력하세요
+    data = load_excel_data(file_path)
+
+    if data is not None:
+        print("데이터 로드 및 처리가 완료되었습니다.")
