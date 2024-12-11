@@ -28,3 +28,5 @@ if __name__ == "__main__":
 
     if data is not None:
         print("데이터 로드 및 처리가 완료되었습니다.")
+
+print('진짜 모르것다')
