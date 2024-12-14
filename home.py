@@ -159,6 +159,5 @@ print(final_data)
 # 각 광역시별 가장 최신 시간 데이터 선택
 final_data_last_time = final_data.loc[final_data.groupby("sidoName")["dataTime"].idxmax()]
 
-# 결과 출력
-print(final_data_last_time)
+json_data = final_data_last_time.to_json(orient="records", force_ascii=False)
 
