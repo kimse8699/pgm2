@@ -146,7 +146,8 @@ mean_values[["통합스코어", "대기질평가"]] = mean_values.apply(
     lambda row: pd.Series(evaluate_air_quality_with_score(row)), axis=1
 )
 
-final_data = mean_values[["sidoName", "dataTime", "통합스코어", "대기질평가"]]
+final_data = mean_values[["sidoName", "dataTime", "통합스코어", "대기질평가", "pm10Value", "pm25Value"]]
+print(final_data)
 
 # 통합스코어 범위	대기질 평가	설명
 # 1.0 ~ 1.5	 매우 좋음	 대기오염이 거의 없는 상태
@@ -154,3 +155,10 @@ final_data = mean_values[["sidoName", "dataTime", "통합스코어", "대기질�
 # 2.6 ~ 3.5	 보통	     대기오염이 약간 있는 상태
 # 3.6 ~ 4.0	 나쁨	     대기오염이 심각해 건강에 영향을 미칠 수 있는 상태
 # 4.0	     매우 나쁨	 대기오염이 매우 심각해 건강에 큰 영향을 미칠 수 있는 상태
+
+# 각 광역시별 가장 최신 시간 데이터 선택
+final_data_last_time = final_data.loc[final_data.groupby("sidoName")["dataTime"].idxmax()]
+
+# 결과 출력
+print(final_data_last_time)
+
